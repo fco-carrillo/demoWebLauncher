@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<data>
+	<module name="OpenGL">
+		<application name="demo1opengl">
+			<command>gplay crab.avi &amp;</command>
+			<route>/demo1</route>
+		</application>
+	 	<application name="demo2opengl">
+			<command>gplay crab.avi &amp;</command>
+			<route>/demo2</route>
+		</application>
+	</module>
+
+	<module name="Gstreamer video">
+		<application name="demo1gst">
+			<command>gplay crab.avi &amp;</command>
+			<route>/demo1</route>
+		</application>
+	 	<application name="demo2gst">
+			<command>gplay crab.avi &amp;</command>
+			<route>/demo2</route>
+		</application>
+	</module>
+
+	<module name="Qt5">
+		<application name="demo1qt">
+			<command>gplay crab.avi &amp;</command>
+			<route>/demo1</route>
+		</application>
+	 	<application name="demo2qt">
+			<command>gplay crab.avi &amp;</command>
+			<route>/demo2</route>
+		</application>
+	</module>
+	
+</data>
