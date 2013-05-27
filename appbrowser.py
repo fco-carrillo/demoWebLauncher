@@ -31,9 +31,7 @@ for xmlapp in xmlfiles:
 	for modulexml in app_root:
 		mod = module.Module();
 		mod.name = modulexml.get('name');
-		#print(mod.name);
-
-	        mod.description = modulexml.get('description');
+		#print(mod.name);	        
 		mod.demos=[];
 		
 		# If module already exist we retrieve it here, else we add it.
@@ -62,7 +60,7 @@ for modname,mod in modules.items():
 	modxml = ET.SubElement(root, 'module');
         print(mod)
 	modxml.set('name', mod.name);
-	modxml.set('description',mod.description);
+	
 	
 	for app in mod.demos:
 		appxml = ET.SubElement(modxml, 'application');
