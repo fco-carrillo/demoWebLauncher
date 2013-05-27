@@ -49,7 +49,7 @@ It is planned to create a script that automatcally fills this apps.xml files fro
 demos path.
 //
 
-
+'''xml
 <?xml version="1.0"?>
 <data>
         <module name="gstreamer">
