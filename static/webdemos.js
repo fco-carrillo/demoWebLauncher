@@ -1,5 +1,8 @@
 
 
 $(document).ready(function() {
-      alert("document ready occurred!");
+	
+	$("ul").first().css('background-color', 'red');      
+
+
 });
