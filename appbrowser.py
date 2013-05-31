@@ -42,7 +42,7 @@ for xmlapp in xmlfiles:
 		for appxml in modulexml:
 			app = demo.Demo();
 			app.name = appxml.get('name');
-			#print(app.name);
+			print(app.name);
 			app.description = appxml.find('description').text;
 			app.route = appxml.find('route').text;
 			app.command = appxml.find('command').text;

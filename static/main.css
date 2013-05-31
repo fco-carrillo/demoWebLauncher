@@ -1,10 +1,25 @@
-li {
-    color: blue;
-    padding-top: 0.4em;
-    padding-left: 0.4em;
-    padding-bottom: 0.4em;
+a:link{
+	
+    color: #017bba;
 
 }
+
+
+li {
+    
+    padding-top: 1.5em;
+    padding-left: 0.4em;
+    padding-bottom: 1.5em;
+
+    list-style:none;
+
+}
+
+li a {
+
+    text-decoration:none;
+}
+
 li:nth-child(odd) {
     background-color: #D2D2D2;
 }
@@ -13,3 +28,36 @@ li:nth-child(even) {
 }
 
 
+.selected {
+
+   background-color: white;
+
+
+}
+
+.unselected{
+
+   background-color: #D2D2D2;
+
+}
+
+.description{
+
+   color: #51626F;
+
+}
+
+
+.title{
+
+  color: #017bba;
+
+}
+
+.copyright{
+
+  color: #51626f;
+  text-align:center;
+  font-size: 0.7em;
+
+}

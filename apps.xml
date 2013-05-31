@@ -1,36 +1,45 @@
-<?xml version="1.0"?>
-<data>
-	<module name="OpenGL">
-		<application name="demo1opengl">
-			<command>gplay crab.avi &amp;</command>
-			<route>/demo1</route>
-		</application>
-	 	<application name="demo2opengl">
-			<command>gplay crab.avi &amp;</command>
-			<route>/demo2</route>
-		</application>
-	</module>
+<data><module name="Wayland"><application name="Start Wayland"><description> Makes necesary changes to start wayland correctly like the wayland symlinks. Please click only Once</description><command>demos/waylandDemos/startWayland.exc &amp;</command><route>startWayland</route></application><application name="Qt5 Custom Geometry Demo On wayland"><description> The custom geometry example shows how to create a QQuickItem which uses the scene graph API to build a custom geometry for the scene graph. It does this by creating a BezierCurve item which is made part of the CustomGeometry module and makes use of this in a QML file.</description><command> LD_LIBRARY_PATH="/usr/lib" XDG_RUNTIME_DIR="/tmp" demos/qtdemos/customgeometry/customgeometry -platform wayland-egl &amp;</command><route>customgeometrywld</route></application><application name="Qt5 hellowindow demo On wayland"><description>Qt demo Hello window shows 3 qt logos running in separate windows, for this it is required a windowing system such as wayland, if not present then it will show the 3 logos at the same time.</description><command>LD_LIBRARY_PATH="/usr/lib" XDG_RUNTIME_DIR="/tmp" demos/qtdemos/hellowindow/hellowindow -platform wayland-egl &amp;</command><route>hellowindowwld</route></application><application name="Qt5 opengl under qml demo On wayland"><description> The OpenGL under QML example shows how an application can make use
+    of the \l QQuickWindow::beforeRendering() signal to draw custom
+    OpenGL content under a Qt Quick scene. This signal is emitted at
+    the start of every frame, before the scene graph starts its
+    rendering, thus any OpenGL draw calls that are made as a response
+    to this signal, will stack under the Qt Quick items</description><command>LD_LIBRARY_PATH="/usr/lib" XDG_RUNTIME_DIR="/tmp" demos/qtdemos/openglunderqml/openglunderqml -platform wayland-egl &amp;</command><route>underqmlwld</route></application><application name="Qt5 shader effects On wayland"><description> This example demonstrates a couple of visual effects that you can perform
+    with shaders in QtQuick 2.0
 
-	<module name="Gstreamer video">
-		<application name="demo1gst">
-			<command>gplay crab.avi &amp;</command>
-			<route>/demo1</route>
-		</application>
-	 	<application name="demo2gst">
-			<command>gplay crab.avi &amp;</command>
-			<route>/demo2</route>
-		</application>
-	</module>
+    ShaderEffects typically operate on other types, using a ShaderEffectSource
+    \snippet quick/shadereffects/shadereffects.qml source
+    In the above snippet, theItem is the id of a complex QML object in the file.</description><command>LD_LIBRARY_PATH="/usr/lib" XDG_RUNTIME_DIR="/tmp" demos/qtdemos/shadereffects/shadereffects -platform wayland-egl &amp;</command><route>shadereffectswld</route></application><application name="Qt5 simple material On wayland"><description>In this example, we will make use of the \l
+    QSGSimpleMaterialShader class to fill a shape in the scene
+    graph. This is a convenience class intended to avoid a lot of the
+    boilerplate code required when creating materials with the \l
+    QSGMaterial, \l QSGMaterialShader and \l QSGMaterialType classes
+    directly.
 
-	<module name="Qt5">
-		<application name="demo1qt">
-			<command>gplay crab.avi &amp;</command>
-			<route>/demo1</route>
-		</application>
-	 	<application name="demo2qt">
-			<command>gplay crab.avi &amp;</command>
-			<route>/demo2</route>
-		</application>
-	</module>
-	
-</data>
+    A simple material consists of two parts, the material state and
+    the material shader. The material shader has one instance per
+    scene graph and contains the actual OpenGL shader program and
+    information about which attributes and uniforms it uses. The
+    material state is what we assign to each individual node, in this
+    case to give them different colors.</description><command>LD_LIBRARY_PATH="/usr/lib" XDG_RUNTIME_DIR="/tmp" demos/qtdemos/simplematerial/simplematerial -platform wayland-egl &amp;</command><route>simplematerialwld</route></application><application name="Qt5 texture in sgnode On wayland"><description>Qt demo showing a qml element as texture, brief Shows how to use FramebufferObjects with Qt Quick.</description><command>LD_LIBRARY_PATH="/usr/lib" XDG_RUNTIME_DIR="/tmp" demos/qtdemos/textureinsgnode/textureinsgnode -platform wayland-egl &amp;</command><route>textureinsgnodewld</route></application><application name="Disable Wayland"><description> It creates the symlinks in order to use fb libraries instead of wayland. To Stop wayland stop and start the server. Please click only Once</description><command>demos/waylandDemos/disableWayland.exc &amp;</command><route>disableWayland</route></application></module><module name="Qt5"><application name="Qt5 Custom Geometry Demo"><description> The custom geometry example shows how to create a QQuickItem which uses the scene graph API to build a custom geometry for the scene graph. It does this by creating a BezierCurve item which is made part of the CustomGeometry module and makes use of this in a QML file.</description><command>demos/qtdemos/customgeometry/customgeometry &amp;</command><route>customgeometry</route></application><application name="Qt5 hellowindow demo"><description>Qt demo Hello window shows 3 qt logos running in separate windows, for this it is required a windowing system such as wayland, if not present then it will show the 3 logos at the same time.</description><command>demos/qtdemos/hellowindow/hellowindow &amp;</command><route>hellowindow</route></application><application name="Qt5 opengl under qml demo"><description> The OpenGL under QML example shows how an application can make use
+    of the \l QQuickWindow::beforeRendering() signal to draw custom
+    OpenGL content under a Qt Quick scene. This signal is emitted at
+    the start of every frame, before the scene graph starts its
+    rendering, thus any OpenGL draw calls that are made as a response
+    to this signal, will stack under the Qt Quick items</description><command>demos/qtdemos/openglunderqml/openglunderqml &amp;</command><route>underqml</route></application><application name="Qt5 shader effects"><description> This example demonstrates a couple of visual effects that you can perform
+    with shaders in QtQuick 2.0
+
+    ShaderEffects typically operate on other types, using a ShaderEffectSource
+    \snippet quick/shadereffects/shadereffects.qml source
+    In the above snippet, theItem is the id of a complex QML object in the file.</description><command>demos/qtdemos/shadereffects/shadereffects &amp;</command><route>shadereffects</route></application><application name="Qt5 simple material"><description>In this example, we will make use of the \l
+    QSGSimpleMaterialShader class to fill a shape in the scene
+    graph. This is a convenience class intended to avoid a lot of the
+    boilerplate code required when creating materials with the \l
+    QSGMaterial, \l QSGMaterialShader and \l QSGMaterialType classes
+    directly.
+
+    A simple material consists of two parts, the material state and
+    the material shader. The material shader has one instance per
+    scene graph and contains the actual OpenGL shader program and
+    information about which attributes and uniforms it uses. The
+    material state is what we assign to each individual node, in this
+    case to give them different colors.</description><command>demos/qtdemos/simplematerial/simplematerial &amp;</command><route>simplematerial</route></application><application name="Qt5 texture in sgnode"><description>Qt demo showing a qml element as texture, brief Shows how to use FramebufferObjects with Qt Quick.</description><command>demos/qtdemos/textureinsgnode/textureinsgnode &amp;</command><route>textureinsgnode</route></application></module><module name="OpenGL"><application name="MM07 demo Tai Ji girl"><description>This OpenglES2 demo shows a 3D girl practicing Tai Ji. After the Tai Ji girl it shows a demo of a hoverjet 3D game. After that it will show a demonstration of ES2 shader capabilities, lightning and textures.</description><command>./demos/mm07demo/command.exc &amp;</command><route>mm07</route></application><application name="MM06 demo samurai"><description>This openGL ES1 demo shows a 3D samurai with animations, after that comes a 3D game play simulation followed by a series of 3D texture and model examples.</description><command>./demos/mm06demo/command.exc</command><route>mm06</route></application><application name="OpenGL bbpinball demo"><description>OpenGL pinball demo, this demo shows a pinball machine</description><command>demos/bbPinball/bbPinball</command><route>bbPinball</route></application></module></data>
