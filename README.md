@@ -95,12 +95,11 @@ After creating the demo folders with their respective app.xml files, go back to 
 
 execute the script:
 
+``` 
 $python appbrowser.py
+``` 
 
 This will add the new demos to the webpage,  they will appear the next time you start the server on the tab/modules you specified in the app.xml files.
-
-
-
 
 
 
@@ -108,24 +107,22 @@ After generating the apps.xml file with the required applications then the serve
 
 In the file server.py modify the line:
 
+``` 
 run(host=.xx.xxx.xxx.xxx', port=8080)
+``` 
 
 Change the .xx.s  for the ip of the board. (use ifconfig to get this)
 Save the file
 
 Start the server with this line:
 
-
+``` 
 $python server.py
+``` 
 
-
-Now you can access the web page in the IP you configured
+Now you can use a browser to access the web page in the IP you configured in the server.py file
 
 xx.xxx.xxx.xxx:8080/demos
-
-
-And you will see the list of demos in the browser.
-
 
 
 
