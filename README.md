@@ -42,30 +42,31 @@ Python 2.6 was cross compiled and installed.
 
 CONFIGURATION
 
-In order to add applications easily, it is only needed to edit apps.xml file.
 
-//TODO * 
-It is planned to create a script that automatcally fills this apps.xml files from the folders contained in
-demos path.
-//
+To add more demos:
 
-'''xml
+1.	Create/copy  a folder at the demoWebLauncher/demos /  directory,  it can have any name.
+2.	Add a file app.xml on that directory you just created, (you can copy it from one of the other demos)
+3.	The App file should have a module and the application definition,    If your demo already belongs to a certain module/tab please use the exact same name so it gets classified in the same tab
+4.	Add the application name, description, command and route.
+5.	If to run your application you need several steps, then create a bash script that execute these steps and call this script from the command that you add on the app.xml   (see the app.xml file created for the mm06 samurai demo)  otherwise call the application directly on the “command”.  See the pinball app.xml as example.
+
+
+Pinball demo app.xml example
 <?xml version="1.0"?>
+
 <data>
-        <module name="gstreamer">
-       		 <application name=.H264 mp4 video play>
-                	<command>gplay crab.avi &amp;</command>
-                	<route>/demo1</route>
-        	</application>
-       	 	<application name=. Qt5 OpenGL Under QML">
-                	<command>/opt/qt5/examples/quick/scenegraph/openglunderqml/openglunderqml </command>
-                	<route>/demo2</route>
-        	</application>
-        </module>
+<module name="OpenGL">
+         <application name="OpenGL bbpinball demo">
+                        <description>OpenGL pinball demo, this demo shows a pinball machine</description>
+                        <command>demos/bbPinball/bbPinball</command>
+                        <route>bbPinball</route>
+         </application>
+</module>
 </data>
 
-This is an example of one module "demos"  two applications, one reproduces video, the other executes a Qt5 
-application.
+
+This is an example of one module "OpenGL"  one application that executes the bbpinball demo
 
 The name of the Module is the text that will be in the tab in the web page, normally this will serve to group
 different kinds of demos.
@@ -85,13 +86,31 @@ The route is a string needed to generate a route where this demo can be accessed
 
 
 
-After filling the xml file with the required applications then the server can be configured.
+After creating the demo folders with their respective app.xml files, go back to demoWebLauncher folder.
+
+execute the script:
+
+$python appbrowser.py
+
+This will add the new demos to the webpage,  they will appear the next time you start the server on the tab/modules you specified in the app.xml files.
+
+
+
+
+
+
+After generating the apps.xml file with the required applications then the server can be configured.
+
 In the file server.py modify the line:
+
 run(host=.xx.xxx.xxx.xxx', port=8080)
+
 Change the .xx.s  for the ip of the board. (use ifconfig to get this)
 Save the file
 
 Start the server with this line:
+
+
 $python server.py
 
 
