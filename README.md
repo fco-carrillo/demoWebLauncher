@@ -55,19 +55,20 @@ To add more demos:
 5.	If to run your application you need several steps, then create a bash script that execute these steps and call this script from the command that you add on the app.xml   (see the app.xml file created for the mm06 samurai demo)  otherwise call the application directly on the “command”.  See the pinball app.xml as example.
 
 
-Pinball demo app.xml example
-<?xml version="1.0"?>
+``` 
+	Pinball demo app.xml example
+	<?xml version="1.0"?>
 
-<data>
-<module name="OpenGL">
-         <application name="OpenGL bbpinball demo">
-                        <description>OpenGL pinball demo, this demo shows a pinball machine</description>
-                        <command>demos/bbPinball/bbPinball</command>
-                        <route>bbPinball</route>
-         </application>
-</module>
-</data>
-
+	<data>
+	<module name="OpenGL">
+         	<application name="OpenGL bbpinball demo">
+         	               <description>OpenGL pinball demo, this demo shows a pinball machine</description>
+         	               <command>demos/bbPinball/bbPinball</command>
+         	               <route>bbPinball</route>
+         	</application>
+	</module>
+	</data>
+``` 
 
 This is an example of one module "OpenGL"  one application that executes the bbpinball demo
 
@@ -81,11 +82,12 @@ The command is the line that you will normally execute in the terminal.
 
 The route is a string needed to generate a route where this demo can be accessed directly.
 
+``` 
 <application name=.H264 mp4 video play>
                 <command>gplay crab.avi &amp;</command>
                 <route>/demo1</route>
 </application>
-
+``` 
 
 
 
