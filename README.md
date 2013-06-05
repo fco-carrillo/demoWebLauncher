@@ -7,7 +7,8 @@ A python bottle.py implementation for ARM devices, it allows the execution of de
 Ownership: 
 Francisco Carrillo
 
-DESCRIPTION & PURPOSE
+Description & Purpose
+---------------------
 
 Description:
 Normally for Demos, a FAE would create a bash script that helps him go trough the list of demos.
@@ -26,6 +27,7 @@ Give access to i.MX demo applications from a web platform.
 Browser -> Web server => i.MX6 
 
 Background
+----------
 
 Board: IMX6QSDB
 
@@ -40,7 +42,8 @@ Python 2.6 was cross compiled and installed.
 
 
 
-CONFIGURATION
+Configuration
+-------------
 
 
 To add more demos:
