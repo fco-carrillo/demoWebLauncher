@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<data>
+	<module name="OpenGL">
+		 <application name="OpenGL bbpinball demo">
+				<description>OpenGL pinball demo, this demo shows a pinball machine</description>
+		                <command>{ cd demos/bbPinball; ./bbPinball; } </command>
+		                <route>bbPinball</route>
+		 </application>
+	</module>
+</data>
