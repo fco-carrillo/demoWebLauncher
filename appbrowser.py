@@ -23,14 +23,24 @@ for xmlapp in xmlfiles:
 	#print(xmlapp);
 	app_file = open(xmlapp, 'r');
 
-	app_tree = ET.parse(xmlapp);
+	try:	
+		app_tree = ET.parse(xmlapp);
+	except ET.ParseError:
+		print( "Ooops! XML malformed check it out: " + xmlapp);
+		continue;
 
 	app_root = app_tree.getroot();
 	
 	
 	for modulexml in app_root:
 		mod = module.Module();
-		mod.name = modulexml.get('name');
+		name=modulexml.get('name');
+		
+		if(name != None):
+			mod.name = name;
+		else:
+			print( xmlapp + " needs a correct module definition");
+			break;
 		#print(mod.name);	        
 		mod.demos=[];
 		
@@ -42,10 +52,31 @@ for xmlapp in xmlfiles:
 		for appxml in modulexml:
 			app = demo.Demo();
 			app.name = appxml.get('name');
-			print(app.name);
-			app.description = appxml.find('description').text;
-			app.route = appxml.find('route').text;
-			app.command = appxml.find('command').text;
+			
+
+			desc = appxml.find('description')
+			route = appxml.find('route')
+			command = appxml.find('command')
+
+
+			if (desc != None):
+				app.description= desc.text;
+			else:
+				app.description= "No description specified"
+			if (route != None):
+				app.route = route.text;
+			else:
+				print( app.name + " needs a route, routes are required");
+				continue;
+			if (command != None):
+				app.command = command.text;
+			else:
+				print( app.name + " needs a command, commands are required");
+				continue;
+
+
+			print("adding: "+ app.name);
+			
 			demos.append(app)
 		
 		mod.demos.extend(demos);
@@ -58,7 +89,7 @@ root = ET.Element('data');
 
 for modname,mod in modules.items():
 	modxml = ET.SubElement(root, 'module');
-        print(mod)
+
 	modxml.set('name', mod.name);
 	
 	
@@ -75,7 +106,7 @@ for modname,mod in modules.items():
 		route.text = app.route;
 
 
-file = open('apps.xml', 'w')
+file = open('apps.xml', 'w');
 
 ET.ElementTree(root).write(file);
 file.close();
